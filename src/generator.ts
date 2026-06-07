@@ -15,7 +15,9 @@ export function generateEnvExample(
 
     const outputPath = path.resolve(".env.example");
 
-    if(fs.existsSync(outputPath) && !force){
+    const alreadyExists = fs.existsSync(outputPath);
+
+    if(alreadyExists && !force){
         return {
             created:false,
             overwritten:false,
@@ -45,8 +47,8 @@ export function generateEnvExample(
     );
 
     return{
-        created:true,
-        overwritten:fs.existsSync(outputPath),
+        created:!alreadyExists,
+        overwritten:alreadyExists && force,
         file:".env.example",
-    }
+    };
 }

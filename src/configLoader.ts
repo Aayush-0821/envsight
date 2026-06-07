@@ -43,7 +43,20 @@ env-strict.config.js
     );
   }
 
-  const config = await import(pathToFileURL(configPath).href);
+  let config;
 
-  return config.default;
+  try {
+    
+    config = await import(pathToFileURL(configPath).href);
+  } catch (error:any) {
+    const required = await import("module");
+
+    const {createRequire} = required;
+
+    const require = createRequire(import.meta.url);
+
+    config = require(configPath);
+  }
+
+  return config.default ?? config;
 }

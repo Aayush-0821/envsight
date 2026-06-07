@@ -6,19 +6,19 @@ import ora from "ora";
 
 export { generateEnvExample } from "./generator.js";
 
-export function checkEnv(config: EnvConfig): ValidationResult {
-  loadEnv(config.enviroment);
+export function checkEnv(config: EnvConfig,showOutput = true): ValidationResult {
+  loadEnv(config.environment);
 
-  const spinner = ora({
- text:"Checking environment variables",
- spinner:"dots"
-}).start();
+  const spinner = showOutput?ora({
+    text: "Checking environment variables",
+    spinner: "dots",
+  }).start():null;
 
   const result = validateEnv(config);
 
-  spinner.stop();
+  spinner?.stop();
 
-  formatResult(result);
+  if(showOutput) formatResult(result);
 
   return result;
 }

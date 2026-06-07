@@ -1,5 +1,5 @@
-export interface EnvConfig{
-    required:string[];
-    optional?:string[];
-    enviroment?:string;
+export interface EnvConfig {
+  required: string[];
+  optional?: string[];
+  environment?: string;
 }

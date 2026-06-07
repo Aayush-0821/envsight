@@ -50,16 +50,16 @@ function handleInit() {
   try {
     const result = generateEnvExample(".env", force);
 
-    if (!result.created) {
-      console.log(chalk.yellow("⚠ .env.example already exists"));
-
-      console.log(chalk.gray("Use --force to overwrite"));
+    if (result.overwritten) {
+      console.log(chalk.green("✔ .env.example regenerated"));
 
       return;
     }
 
-    if (result.overwritten) {
-      console.log(chalk.green("✔ .env.example regenerated"));
+    if (!result.created) {
+      console.log(chalk.yellow("⚠ .env.example already exists"));
+
+      console.log(chalk.gray("Use --force to overwrite"));
 
       return;
     }
@@ -76,11 +76,11 @@ async function handleCheck() {
   try {
     const config = await loadConfig();
 
-    const result = checkEnv(config);
+    const result = checkEnv(config,!json);
 
     if (json) {
       console.log(JSON.stringify(result, null, 2));
-    } else {
+    } else if(result.success) {
       console.log(chalk.green("\n✔ Environment is valid"));
     }
 

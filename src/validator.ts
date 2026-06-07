@@ -8,6 +8,7 @@ export interface ValidationResult{
     total:number;
     passed:number;
     failed:number;
+    optional:number;
 }
 
 export function validateEnv(config:EnvConfig):ValidationResult{
@@ -31,9 +32,11 @@ export function validateEnv(config:EnvConfig):ValidationResult{
         }
     });
 
-    const total = config.required.length + (config.optional?.length ?? 0);
+    const optionalCount = config.optional?.length ?? 0;
 
-    const passed = present.length;
+    const total = config.required.length + optionalCount;
+
+    const passed = present.length + optionalMissing.length === 0?present.length+optionalCount:present.length;
 
     return {
         success : missing.length === 0,
@@ -43,5 +46,6 @@ export function validateEnv(config:EnvConfig):ValidationResult{
         total,
         passed,
         failed: missing.length,
+        optional:optionalCount,
     };
 }

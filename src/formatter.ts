@@ -5,7 +5,7 @@ import boxen from "boxen";
 export function formatResult(result: ValidationResult) {
   console.log("\n🛡 env-strict\n");
 
-  console.log("Checking enviroment...\n");
+  console.log("Checking environment...\n");
 
   result.present.forEach((key) => {
     logSuccess(key);
@@ -27,23 +27,25 @@ export function formatResult(result: ValidationResult) {
 
   console.log(`Failed: ${result.failed}`);
 
+  console.log(`Optional: ${result.optional}`);
+
   console.log("");
 
   if (result.success) {
-    console.log(boxen("Environment validation passed",
-      {
-        padding:0.5,
-        borderStyle:"round",
-        borderColor:"green",
-      }
-    ));
+    console.log(
+      boxen("Environment validation passed", {
+        padding: 0.5,
+        borderStyle: "round",
+        borderColor: "green",
+      }),
+    );
   } else {
-    console.log(boxen("Environment validation failed",
-      {
-        padding:0.5,
-        borderStyle:"round",
-        borderColor:"redBright",
-      }
-    ));
+    console.log(
+      boxen("Environment validation failed", {
+        padding: 0.5,
+        borderStyle: "round",
+        borderColor: "redBright",
+      }),
+    );
   }
 }

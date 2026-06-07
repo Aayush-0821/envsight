@@ -1,7 +1,7 @@
 {
   "name": "env-strict",
   "version": "1.0.0",
-  "description": "CLI tool for enviroment variables",
+  "description": "CLI tool for environment variables",
   "license": "ISC",
   "author": "Aayush",
   "type": "module",
@@ -10,6 +10,11 @@
   "bin": {
     "env-strict": "./dist/cli.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest"
