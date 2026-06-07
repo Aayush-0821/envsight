@@ -3,9 +3,9 @@ import path from "path";
 import { pathToFileURL } from "url";
 
 export async function loadConfig() {
-  const jsConfig = path.resolve("env-strict.config.js");
+  const jsConfig = path.resolve("env-synapse.config.js");
 
-  const tsConfig = path.resolve("env-strict.config.ts");
+  const tsConfig = path.resolve("env-synapse.config.ts");
 
   let configPath: string | null = null;
 
@@ -18,7 +18,7 @@ export async function loadConfig() {
   if (!configPath) {
     throw new Error(
       `
-env-strict.config.js not found
+env-synapse.config.js not found
 
 Create one in your project root.
 `,
@@ -34,11 +34,11 @@ TypeScript config detected.
 
 Rename:
 
-env-strict.config.ts
+env-synapse.config.ts
 
 to:
 
-env-strict.config.js
+env-synapse.config.js
 `,
     );
   }
@@ -46,12 +46,11 @@ env-strict.config.js
   let config;
 
   try {
-    
     config = await import(pathToFileURL(configPath).href);
-  } catch (error:any) {
+  } catch (error: any) {
     const required = await import("module");
 
-    const {createRequire} = required;
+    const { createRequire } = required;
 
     const require = createRequire(import.meta.url);
 

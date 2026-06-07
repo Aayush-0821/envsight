@@ -3,7 +3,7 @@ import { logError, logSuccess, logWarning } from "./utils/logger.js";
 import boxen from "boxen";
 
 export function formatResult(result: ValidationResult) {
-  console.log("\n🛡 env-strict\n");
+  console.log("\n🛡 env-synapse\n");
 
   console.log("Checking environment...\n");
 

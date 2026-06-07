@@ -1,4 +1,4 @@
-# 🛡 env-strict
+# 🛡 env-synapse
 
 A lightweight environment variable validator CLI for Node.js projects.
 
@@ -21,19 +21,19 @@ Prevent runtime crashes caused by missing environment variables by validating yo
 Install globally:
 
 ```
-npm install -g env-strict
+npm install -g env-synapse
 ```
 
 Install Locally:
 
 ```
-npm install env-strict
+npm install env-synapse
 ```
 
 Use directly with npx:
 
 ```
-npx env-strict
+npx env-synapse
 ```
 
 ## Setup
@@ -41,7 +41,7 @@ npx env-strict
 Create a configuration file in your project root:
 
 ```
-env-strict.config.js
+env-synapse.config.js
 ```
 
 Example:
@@ -67,7 +67,7 @@ Your project Structure:
 my-project/
 ├── src/
 ├── .env
-├── env-strict.config.js
+├── env-synapse.config.js
 ├── package.json
 └── node_modules/
 ```
@@ -86,13 +86,13 @@ PORT=5000
   Run:
 
 ```
-env-strict check
+env-synapse check
 ```
 
 Example Output:
 
 ```
-🛡 env-strict
+🛡 env-synapse
 
 Checking environment...
 
@@ -106,7 +106,7 @@ Checking environment...
   Generate a template file from your .env:
 
 ```
-env-strict init
+env-synapse init
 ```
 
 Example: \
@@ -128,7 +128,7 @@ JWT_SECRET=
   If .env.example already exists:
 
 ```
-env-strict init
+env-synapse init
 ```
 
 will not _overwrite_ it.
@@ -136,7 +136,7 @@ will not _overwrite_ it.
 To _OverWrite_ :
 
 ```
-env-strict init --force
+env-synapse init --force
 ```
 
 Output:
@@ -149,7 +149,7 @@ Output:
   Useful for CI/CD pipelines
 
 ```
-env-strict check --json
+env-synapse check --json
 ```
 
 Example :
@@ -208,26 +208,26 @@ jobs:
 
 
       - name: Validate environment
-        run: npx env-strict check
+        run: npx env-synapse check
 ```
 
 _Now every push and pull request validates your environment automatically._
 
 ## Commands
 
-| Command                   | Description                    |
-| ------------------------- | ------------------------------ |
-| `env-strict check`        | Validate environment variables |
-| `env-strict check --json` | Output JSON result             |
-| `env-strict init`         | Generate .env.example          |
-| `env-strict init --force` | Regenerate .env.example        |
+| Command                    | Description                    |
+| -------------------------- | ------------------------------ |
+| `env-synapse check`        | Validate environment variables |
+| `env-synapse check --json` | Output JSON result             |
+| `env-synapse init`         | Generate .env.example          |
+| `env-synapse init --force` | Regenerate .env.example        |
 
 ## Development
 
 Clone Repository :
 
 ```
-git clone https://github.com/Aayush-0821/env-strict.git
+git clone https://github.com/Aayush-0821/env-synapse.git
 ```
 
 Install Dependencies:

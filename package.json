@@ -1,5 +1,5 @@
 {
-  "name": "env-strict",
+  "name": "env-synapse",
   "version": "1.0.0",
   "description": "CLI tool for environment variables",
   "license": "ISC",
@@ -8,7 +8,7 @@
   "main": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "bin": {
-    "env-strict": "./dist/cli.js"
+    "env-synapse": "./dist/cli.js"
   },
   "files": [
     "dist",

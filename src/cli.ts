@@ -14,7 +14,7 @@ const force = args.includes("--force");
 
 const json = args.includes("--json");
 
-if(args.includes("--version")){
+if (args.includes("--version")) {
   console.log("1.0.0");
   process.exit(0);
 }
@@ -22,25 +22,25 @@ if(args.includes("--version")){
 function showHelp() {
   console.log(`
 
-${chalk.bold.blue("🛡 env-strict")}
+${chalk.bold.blue("🛡 env-synapse")}
 
 
 ${chalk.bold("Commands:")}
 
 
-${chalk.cyan("env-strict init")}
+${chalk.cyan("env-synapse init")}
 ${chalk.gray("Generates .env.example")}
 
 
-${chalk.cyan("env-strict init --force")}
+${chalk.cyan("env-synapse init --force")}
 ${chalk.gray("Overwrites .env.example")}
 
 
-${chalk.cyan("env-strict check")}
+${chalk.cyan("env-synapse check")}
 ${chalk.gray("Validates environment")}
 
 
-${chalk.cyan("env-strict check --json")}
+${chalk.cyan("env-synapse check --json")}
 ${chalk.gray("Generates JSON output")}
 
 `);
@@ -76,18 +76,17 @@ async function handleCheck() {
   try {
     const config = await loadConfig();
 
-    const result = checkEnv(config,!json);
+    const result = checkEnv(config, !json);
 
     if (json) {
       console.log(JSON.stringify(result, null, 2));
-    } else if(result.success) {
+    } else if (result.success) {
       console.log(chalk.green("\n✔ Environment is valid"));
     }
 
-    if(!result.success){
+    if (!result.success) {
       process.exit(1);
     }
-
   } catch (error: any) {
     if (json) {
       console.log(
