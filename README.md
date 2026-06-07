@@ -227,7 +227,7 @@ _Now every push and pull request validates your environment automatically._
 Clone Repository :
 
 ```
-git clone
+git clone https://github.com/Aayush-0821/env-strict.git
 ```
 
 Install Dependencies:
