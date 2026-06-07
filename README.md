@@ -1,4 +1,4 @@
-# 🛡 env-synapse
+# 🛡 envsight
 
 A lightweight environment variable validator CLI for Node.js projects.
 
@@ -21,19 +21,19 @@ Prevent runtime crashes caused by missing environment variables by validating yo
 Install globally:
 
 ```
-npm install -g env-synapse
+npm install -g envsight
 ```
 
 Install Locally:
 
 ```
-npm install env-synapse
+npm install envsight
 ```
 
 Use directly with npx:
 
 ```
-npx env-synapse
+npx envsight
 ```
 
 ## Setup
@@ -41,7 +41,7 @@ npx env-synapse
 Create a configuration file in your project root:
 
 ```
-env-synapse.config.js
+envsight.config.js
 ```
 
 Example:
@@ -67,7 +67,7 @@ Your project Structure:
 my-project/
 ├── src/
 ├── .env
-├── env-synapse.config.js
+├── envsight.config.js
 ├── package.json
 └── node_modules/
 ```
@@ -86,13 +86,13 @@ PORT=5000
   Run:
 
 ```
-env-synapse check
+envsight check
 ```
 
 Example Output:
 
 ```
-🛡 env-synapse
+🛡 envsight
 
 Checking environment...
 
@@ -106,7 +106,7 @@ Checking environment...
   Generate a template file from your .env:
 
 ```
-env-synapse init
+envsight init
 ```
 
 Example: \
@@ -128,7 +128,7 @@ JWT_SECRET=
   If .env.example already exists:
 
 ```
-env-synapse init
+envsight init
 ```
 
 will not _overwrite_ it.
@@ -136,7 +136,7 @@ will not _overwrite_ it.
 To _OverWrite_ :
 
 ```
-env-synapse init --force
+envsight init --force
 ```
 
 Output:
@@ -149,7 +149,7 @@ Output:
   Useful for CI/CD pipelines
 
 ```
-env-synapse check --json
+envsight check --json
 ```
 
 Example :
@@ -208,26 +208,26 @@ jobs:
 
 
       - name: Validate environment
-        run: npx env-synapse check
+        run: npx envsight check
 ```
 
 _Now every push and pull request validates your environment automatically._
 
 ## Commands
 
-| Command                    | Description                    |
-| -------------------------- | ------------------------------ |
-| `env-synapse check`        | Validate environment variables |
-| `env-synapse check --json` | Output JSON result             |
-| `env-synapse init`         | Generate .env.example          |
-| `env-synapse init --force` | Regenerate .env.example        |
+| Command                 | Description                    |
+| ----------------------- | ------------------------------ |
+| `envsight check`        | Validate environment variables |
+| `envsight check --json` | Output JSON result             |
+| `envsight init`         | Generate .env.example          |
+| `envsight init --force` | Regenerate .env.example        |
 
 ## Development
 
 Clone Repository :
 
 ```
-git clone https://github.com/Aayush-0821/env-synapse.git
+git clone https://github.com/Aayush-0821/envsight.git
 ```
 
 Install Dependencies:

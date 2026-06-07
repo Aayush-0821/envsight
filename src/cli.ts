@@ -22,25 +22,25 @@ if (args.includes("--version")) {
 function showHelp() {
   console.log(`
 
-${chalk.bold.blue("🛡 env-synapse")}
+${chalk.bold.blue("🛡 envsight")}
 
 
 ${chalk.bold("Commands:")}
 
 
-${chalk.cyan("env-synapse init")}
+${chalk.cyan("envsight init")}
 ${chalk.gray("Generates .env.example")}
 
 
-${chalk.cyan("env-synapse init --force")}
+${chalk.cyan("envsight init --force")}
 ${chalk.gray("Overwrites .env.example")}
 
 
-${chalk.cyan("env-synapse check")}
+${chalk.cyan("envsight check")}
 ${chalk.gray("Validates environment")}
 
 
-${chalk.cyan("env-synapse check --json")}
+${chalk.cyan("envsight check --json")}
 ${chalk.gray("Generates JSON output")}
 
 `);

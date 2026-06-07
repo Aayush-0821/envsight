@@ -1,4 +1,4 @@
-name: env-synapse-check
+name: envsight-check
 
 on:
   push:
@@ -22,5 +22,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run env-synapse
-        run: npx env-synapse check
+      - name: Run envsight
+        run: npx envsight check

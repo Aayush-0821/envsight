@@ -1,5 +1,5 @@
 {
-  "name": "env-synapse",
+  "name": "envsight",
   "version": "1.0.0",
   "description": "CLI tool for environment variables",
   "license": "ISC",
@@ -8,7 +8,7 @@
   "main": "./dist/index.js",
   "types": "./dist/types/index.d.ts",
   "bin": {
-    "env-synapse": "./dist/cli.js"
+    "envsight": "./dist/cli.js"
   },
   "files": [
     "dist",

@@ -3,9 +3,9 @@ import path from "path";
 import { pathToFileURL } from "url";
 
 export async function loadConfig() {
-  const jsConfig = path.resolve("env-synapse.config.js");
+  const jsConfig = path.resolve("envsight.config.js");
 
-  const tsConfig = path.resolve("env-synapse.config.ts");
+  const tsConfig = path.resolve("envsight.config.ts");
 
   let configPath: string | null = null;
 
@@ -18,7 +18,7 @@ export async function loadConfig() {
   if (!configPath) {
     throw new Error(
       `
-env-synapse.config.js not found
+envsight.config.js not found
 
 Create one in your project root.
 `,
@@ -34,11 +34,11 @@ TypeScript config detected.
 
 Rename:
 
-env-synapse.config.ts
+envsight.config.ts
 
 to:
 
-env-synapse.config.js
+envsight.config.js
 `,
     );
   }
