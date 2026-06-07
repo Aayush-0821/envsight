@@ -1,0 +1,29 @@
+{
+  "name": "env-strict",
+  "version": "1.0.0",
+  "description": "CLI tool for enviroment variables",
+  "license": "ISC",
+  "author": "Aayush",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "bin": {
+    "env-strict": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.2",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.8"
+  },
+  "dependencies": {
+    "boxen": "^8.0.1",
+    "chalk": "^5.6.2",
+    "dotenv": "^17.4.2",
+    "ora": "^9.4.0"
+  }
+}
